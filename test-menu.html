@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Prueba menú</title>
+<style>html,body{margin:0}iframe{width:390px;height:844px;border:0}pre{position:fixed;left:400px;top:0;margin:0;background:#000;color:#0f0;font:11px monospace;z-index:9}</style>
+</head>
+<body>
+<iframe id="f" src="index.html"></iframe>
+<pre id="out">esperando</pre>
+<script>
+var f = document.getElementById("f");
+var out = document.getElementById("out");
+var log = [];
+function wait(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
+
+f.addEventListener("load", async function () {
+  var d = f.contentDocument;
+  var w = f.contentWindow;
+  var nav = d.querySelector(".main-nav");
+  var btn = d.getElementById("botonMenu");
+  var ul = d.getElementById("menuPrincipal");
+
+  function state(name) {
+    var r = nav.getBoundingClientRect();
+    log.push({
+      name: name,
+      navHeight: Math.round(r.height),
+      navOpen: nav.classList.contains("open"),
+      expanded: btn.getAttribute("aria-expanded"),
+      label: btn.getAttribute("aria-label"),
+      toggleOpen: btn.classList.contains("open"),
+      ulHeight: Math.round(ul.getBoundingClientRect().height),
+      bodyOverflowX: d.documentElement.scrollWidth > w.innerWidth
+    });
+  }
+
+  await wait(500);
+  state("inicial");
+
+  btn.click();
+  await wait(500);
+  state("abierto");
+
+  btn.click();
+  await wait(500);
+  state("cerrado-con-boton");
+
+  btn.click();
+  await wait(450);
+  d.querySelector('.nav-link[href="#quimica"]').click();
+  await wait(900);
+  state("tras-enlace");
+  log.push({ name: "hash", hash: w.location.hash, scrollY: Math.round(w.scrollY), quimicaTop: Math.round(d.getElementById("quimica").getBoundingClientRect().top) });
+
+  out.textContent = JSON.stringify(log, null, 1);
+});
+</script>
+</body>
+</html>

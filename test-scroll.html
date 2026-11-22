@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Prueba</title>
+<style>html,body{margin:0}iframe{width:1200px;height:800px;border:0}pre{position:fixed;left:0;bottom:0;margin:0;background:#000;color:#0f0;font:11px monospace;max-height:300px;overflow:auto;z-index:9}</style>
+</head>
+<body>
+<iframe id="f" src="index.html"></iframe>
+<pre id="out">esperando</pre>
+<script>
+var f = document.getElementById("f");
+var out = document.getElementById("out");
+var log = [];
+function wait(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
+
+f.addEventListener("load", async function () {
+  var d = f.contentDocument;
+  var w = f.contentWindow;
+
+  function state(name) {
+    var nav = d.querySelectorAll(".nav-link.active");
+    log.push({
+      name: name,
+      scrollY: Math.round(w.scrollY),
+      progress: d.getElementById("barraProgreso").style.width,
+      headerScrolled: d.getElementById("cabecera").classList.contains("scrolled"),
+      topShown: d.getElementById("botonArriba").classList.contains("show"),
+      active: Array.from(nav).map(function (a) { return a.textContent; })
+    });
+  }
+
+  function go(id) {
+    var el = d.getElementById(id);
+    w.scrollTo(0, el.getBoundingClientRect().top + w.scrollY - 80);
+  }
+
+  await wait(400);
+  state("inicio");
+
+  go("mitologia");
+  await wait(500);
+  state("mitologia");
+
+  go("fisica");
+  await wait(500);
+  state("fisica");
+
+  go("quimica");
+  await wait(500);
+  state("quimica");
+
+  go("conclusiones");
+  await wait(500);
+  state("conclusiones");
+
+  go("resumen");
+  await wait(500);
+  state("resumen");
+
+  go("abstract");
+  await wait(500);
+  state("abstract");
+
+  w.scrollTo(0, d.documentElement.scrollHeight);
+  await wait(600);
+  state("fondo");
+
+  d.getElementById("botonArriba").click();
+  await wait(1400);
+  state("tras-volver-arriba");
+
+  out.textContent = JSON.stringify(log, null, 1);
+});
+</script>
+</body>
+</html>

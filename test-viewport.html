@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Medir</title></head>
+<body style="margin:0">
+<iframe id="f" src="index.html" style="width:390px;height:844px;border:0"></iframe>
+<pre id="out">esperando</pre>
+<script>
+  var f = document.getElementById("f");
+  f.onload = function () {
+    var d = f.contentDocument;
+    var w = f.contentWindow;
+    function m(s) {
+      var el = d.querySelector(s);
+      if (!el) return null;
+      var r = el.getBoundingClientRect();
+      return { left: Math.round(r.left), right: Math.round(r.right), width: Math.round(r.width), scrollW: el.scrollWidth };
+    }
+    document.getElementById("out").textContent = JSON.stringify({
+      innerWidth: w.innerWidth,
+      docClientWidth: d.documentElement.clientWidth,
+      docScrollWidth: d.documentElement.scrollWidth,
+      bodyScrollWidth: d.body.scrollWidth,
+      container: m(".hero .container"),
+      grid: m(".hero-grid"),
+      copy: m(".hero-copy"),
+      intro: m(".hero-intro"),
+      title: m(".title-main"),
+      actions: m(".hero-actions"),
+      project: m(".hero-project"),
+      visual: m(".hero-visual"),
+      figure: m(".hero-figure"),
+      badge: m(".hero-badge"),
+      header: m(".site-header"),
+      menuBtn: m("#botonMenu"),
+      nav: m(".main-nav"),
+      introFont: w.getComputedStyle(d.querySelector(".hero-intro")).fontSize,
+      gridCols: w.getComputedStyle(d.querySelector(".hero-grid")).gridTemplateColumns
+    }, null, 2);
+  };
+</script>
+</body>
+</html>

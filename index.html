@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Proyecto escolar de grado décimo sobre la muerte desde la mitología griega y la ciencia (física y química).">
+  <title>La muerte: entre la mitología y la ciencia | Proyecto escolar</title>
+
+  <!-- Fuentes guardadas en el proyecto para que la página funcione sin internet -->
+  <link rel="preload" href="fonts/cormorant-garamond-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/jost-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Pequeño ícono de reloj de arena para la pestaña del navegador -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2317152F'/%3E%3Cpath d='M20 14h24M20 50h24M24 14c0 10 8 12 8 18s-8 8-8 18M40 14c0 10-8 12-8 18s8 8 8 18' fill='none' stroke='%23D6AD68' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- Barra dorada que muestra el avance de la lectura -->
+  <div class="scroll-progress" aria-hidden="true">
+    <span id="barraProgreso"></span>
+  </div>
+
+  <!-- ================= ENCABEZADO Y NAVEGACIÓN ================= -->
+  <header class="site-header" id="cabecera">
+    <div class="container nav-wrap">
+      <a class="brand" href="#inicio" aria-label="Volver al inicio de la página">
+        <span class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+            <path d="M7 3h10M7 21h10M9 3c0 4 3 5 3 7s-3 3-3 7M15 3c0 4-3 5-3 7s3 3 3 7"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="brand-small">Mito &amp; Ciencia</span>
+          <span class="brand-title">La muerte</span>
+        </span>
+      </a>
+
+      <button class="menu-toggle" id="botonMenu" aria-expanded="false" aria-controls="menuPrincipal" aria-label="Abrir menú de navegación">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul id="menuPrincipal">
+          <li><a class="nav-link" href="#inicio">La muerte</a></li>
+          <li><a class="nav-link" href="#mitologia">Mitología</a></li>
+          <li><a class="nav-link" href="#fisica">Física</a></li>
+          <li><a class="nav-link" href="#quimica">Química</a></li>
+          <li><a class="nav-link" href="#conclusiones">Conclusiones</a></li>
+          <li><a class="nav-link" href="#resumen">Resumen</a></li>
+          <li><a class="nav-link" href="#abstract">Abstract</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- ================= SECCIÓN 1: LA MUERTE ================= -->
+    <section class="hero" id="inicio" aria-labelledby="tituloPrincipal">
+      <div class="hero-bg" aria-hidden="true">
+        <img src="img/hero-forest.jpg" alt="" width="1280" height="1907">
+      </div>
+      <div class="stars" aria-hidden="true"></div>
+      <div class="hero-glow" aria-hidden="true"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">01 · La muerte</p>
+
+          <h1 id="tituloPrincipal">
+            <span class="title-main">LA MUERTE:</span>
+            <span class="title-sub">ENTRE LA MITOLOGÍA<br>Y LA CIENCIA</span>
+          </h1>
+
+          <p class="hero-intro">
+            La muerte es un fenómeno natural que forma parte del ciclo de vida de los seres vivos.
+            Desde tiempos antiguos, los seres humanos han intentado comprender qué sucede cuando
+            termina la vida. Algunas culturas lo explicaban mediante historias mitológicas, mientras
+            que la ciencia estudia los procesos biológicos, físicos y químicos relacionados con este
+            fenómeno.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="#desarrollo">
+              Comenzar el recorrido
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+                <path d="M12 4v16M6 14l6 6 6-6"/>
+              </svg>
+            </a>
+            <a class="btn btn-ghost" href="#resumen">Ir al resumen</a>
+          </div>
+
+          <p class="hero-project">Proyecto escolar de investigación · Grado décimo de bachillerato</p>
+        </div>
+
+        <div class="hero-visual">
+          <div class="orbit orbit-one" aria-hidden="true"></div>
+          <div class="orbit orbit-two" aria-hidden="true"></div>
+
+          <figure class="hero-figure">
+            <div class="hero-photo">
+              <img src="img/hero-hourglass.jpg" alt="Reloj de arena de madera y cristal iluminado sobre un fondo oscuro"
+                   width="900" height="1330" fetchpriority="high">
+            </div>
+            <figcaption>El tiempo que se agota: un símbolo de la muerte en muchas culturas.</figcaption>
+          </figure>
+
+          <div class="hero-badge">
+            <span class="badge-latin">Memento mori</span>
+            <span class="badge-translation">«Recuerda que eres mortal»</span>
+          </div>
+        </div>
+      </div>
+
+      <a class="scroll-cue" href="#desarrollo" aria-label="Bajar al desarrollo de la investigación">
+        <span>Desliza para descubrir</span>
+        <span class="scroll-line" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <!-- ================= SECCIÓN 2: DESARROLLO ================= -->
+    <section class="section section-desarrollo" id="desarrollo" aria-labelledby="tituloDesarrollo">
+      <div class="container">
+
+        <header class="section-head reveal">
+          <span class="section-number" aria-hidden="true">02</span>
+          <div class="section-head-text">
+            <p class="kicker">El recorrido de la investigación</p>
+            <h2 id="tituloDesarrollo">DESARROLLO DE LA <em>INVESTIGACIÓN</em></h2>
+            <p class="section-lead">
+              La muerte puede mirarse desde muchos lugares. Aquí la observamos desde dos: los relatos
+              que la imaginaron y las leyes naturales que la explican. Cuatro apartados para recorrer
+              el mismo misterio con ojos de mito y ojos de ciencia.
+            </p>
+          </div>
+        </header>
+
+        <!-- ---------- A. MITOLOGÍA ---------- -->
+        <section class="subsection" id="mitologia" aria-labelledby="tituloMitologia">
+          <header class="subhead reveal">
+            <span class="letter-badge" aria-hidden="true">A</span>
+            <div>
+              <p class="sub-kicker">Primera mirada</p>
+              <h3 id="tituloMitologia">La muerte en la mitología</h3>
+              <p>
+                Para los antiguos griegos, la muerte no era una desaparición total: era el paso a un
+                mundo subterráneo gobernado por Hades. Las almas de los difuntos llegaban allí después
+                de cruzar el río Estigia, y solo unos pocos héroes lograban regresar. Estas historias
+                no eran ciencia: eran una forma de explicar lo desconocido y de dar consuelo a quienes
+                perdían a alguien.
+              </p>
+            </div>
+          </header>
+
+          <div class="myth-grid">
+            <article class="myth-card reveal">
+              <div class="myth-media">
+                <img src="img/hades.jpg" alt="Hades y Perséfone representados en un plato de cerámica griega"
+                     width="900" height="900" loading="lazy">
+                <span class="myth-index" aria-hidden="true">I</span>
+              </div>
+              <div class="myth-body">
+                <p class="myth-role">Dios del inframundo</p>
+                <h4>Hades</h4>
+                <p>
+                  Gobernante del mundo de los muertos. Según el mito, recibía las almas de quienes
+                  morían y vigilaba que ninguna escapara. No representaba la muerte en sí, sino el rey
+                  del lugar al que se llegaba después de morir.
+                </p>
+              </div>
+            </article>
+
+            <article class="myth-card reveal reveal-delay-1">
+              <div class="myth-media">
+                <img src="img/thanatos.jpg" alt="Detalle de un jarrón griego donde Hipnos y Tánatos cargan el cuerpo de Sarpedón"
+                     width="1200" height="800" loading="lazy">
+                <span class="myth-index" aria-hidden="true">II</span>
+              </div>
+              <div class="myth-body">
+                <p class="myth-role">La muerte personificada</p>
+                <h4>Tánatos</h4>
+                <p>
+                  Era hijo de la Noche y hermano de Hipnos, el sueño. Se le representaba con alas y
+                  una antorcha invertida. En la <em>Ilíada</em>, él y su hermano trasladan el cuerpo
+                  del héroe Sarpedón lejos del campo de batalla.
+                </p>
+              </div>
+            </article>
+
+            <article class="myth-card reveal reveal-delay-2">
+              <div class="myth-media">
+                <img src="img/persephone.jpg" alt="Pintura El regreso de Perséfone, de Frederic Leighton"
+                     width="900" height="1162" loading="lazy">
+                <span class="myth-index" aria-hidden="true">III</span>
+              </div>
+              <div class="myth-body">
+                <p class="myth-role">La que vuelve de la oscuridad</p>
+                <h4>Perséfone</h4>
+                <p>
+                  Hija de Deméter, la diosa de la agricultura. Hades la llevó al inframundo y, como
+                  había comido semillas de granada, debía pasar una parte del año allí. Su regreso
+                  marcaba la primavera; su ausencia, el invierno.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <aside class="note reveal">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"></circle>
+              <path d="M12 11v5M12 8h.01"></path>
+            </svg>
+            <div>
+              <strong>Importante</strong>
+              <p>
+                Estas historias eran creencias mitológicas y religiosas, no explicaciones científicas.
+                Los griegos las usaban para dar sentido a la muerte, pero no describían sus causas
+                naturales. Hoy la ciencia estudia ese proceso de otra manera.
+              </p>
+            </div>
+          </aside>
+        </section>
+
+        <!-- ---------- B. FÍSICA ---------- -->
+        <section class="subsection" id="fisica" aria-labelledby="tituloFisica">
+          <header class="subhead reveal">
+            <span class="letter-badge" aria-hidden="true">B</span>
+            <div>
+              <p class="sub-kicker">La materia y la energía</p>
+              <h3 id="tituloFisica">La muerte desde la física</h3>
+              <p>
+                Cuando un organismo muere, sus funciones vitales se detienen de forma permanente.
+                El corazón deja de bombear, la respiración cesa y el cuerpo ya no produce la energía
+                que necesita. Desde la física podemos observar cómo se transfiere el calor y cómo
+                influye la temperatura del ambiente.
+              </p>
+            </div>
+          </header>
+
+          <div class="split">
+            <div>
+              <ul class="fact-list">
+                <li class="fact reveal">
+                  <span class="fact-num" aria-hidden="true">01</span>
+                  <div>
+                    <h4>Temperatura corporal</h4>
+                    <p>
+                      Al detenerse la circulación, el cuerpo deja de generar calor. Su temperatura
+                      desciende poco a poco hasta acercarse a la del ambiente que lo rodea.
+                    </p>
+                  </div>
+                </li>
+                <li class="fact reveal">
+                  <span class="fact-num" aria-hidden="true">02</span>
+                  <div>
+                    <h4>Transformación de la energía</h4>
+                    <p>
+                      La energía química almacenada en las células ya no se renueva. El calor pasa
+                      del cuerpo al entorno hasta buscar un equilibrio térmico.
+                    </p>
+                  </div>
+                </li>
+                <li class="fact reveal">
+                  <span class="fact-num" aria-hidden="true">03</span>
+                  <div>
+                    <h4>Temperatura ambiental</h4>
+                    <p>
+                      El aire, el agua y el suelo influyen en la velocidad de ese intercambio. No es
+                      lo mismo un lugar cálido y húmedo que una montaña fría y seca.
+                    </p>
+                  </div>
+                </li>
+                <li class="fact reveal">
+                  <span class="fact-num" aria-hidden="true">04</span>
+                  <div>
+                    <h4>Ambientes cálidos y fríos</h4>
+                    <p>
+                      El calor acelera las reacciones químicas; el frío las vuelve más lentas. Por
+                      eso los procesos posteriores a la muerte avanzan más rápido en un ambiente
+                      cálido y se frenan en uno frío.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+
+              <div class="temp-scale reveal">
+                <div class="temp-scale-head">
+                  <span>Temperatura</span>
+                  <span>Frío — Calor</span>
+                </div>
+                <div class="temp-bar" role="img" aria-label="Escala de color desde el frío hasta el calor"></div>
+                <div class="temp-labels">
+                  <span>Frío</span>
+                  <span>Templado</span>
+                  <span>Cálido</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="visual-stack">
+              <figure class="photo-frame photo-frame-tall reveal">
+                <img src="img/thermometer.jpg" alt="Termómetro con escalas en grados Celsius y Kelvin"
+                     width="700" height="1218" loading="lazy">
+                <figcaption>
+                  El termómetro permite medir la temperatura y observar el intercambio de calor con
+                  el ambiente.
+                </figcaption>
+              </figure>
+
+              <div class="climate-pair reveal">
+                <div class="climate-card">
+                  <img src="img/fire.jpg" alt="Llamas de una fogata en la oscuridad" width="1000" height="666" loading="lazy">
+                  <div class="climate-label">
+                    <strong>Ambiente cálido</strong>
+                    <span>Reacciones más rápidas</span>
+                  </div>
+                </div>
+                <div class="climate-card">
+                  <img src="img/frost.jpg" alt="Cristales de escarcha sobre una superficie" width="1200" height="675" loading="lazy">
+                  <div class="climate-label">
+                    <strong>Ambiente frío</strong>
+                    <span>Procesos más lentos</span>
+                  </div>
+                </div>
+              </div>
+
+              <p class="visual-note reveal">
+                La humedad también importa: un ambiente húmedo favorece la actividad de los
+                microorganismos y, con ella, la descomposición.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ---------- C. QUÍMICA ---------- -->
+        <section class="subsection" id="quimica" aria-labelledby="tituloQuimica">
+          <header class="subhead reveal">
+            <span class="letter-badge" aria-hidden="true">C</span>
+            <div>
+              <p class="sub-kicker">La transformación de la materia</p>
+              <h3 id="tituloQuimica">La muerte desde la química</h3>
+              <p>
+                Los organismos están formados por sustancias como agua, proteínas, grasas y
+                minerales. Al morir, esas sustancias no desaparecen: se transforman mediante
+                reacciones químicas y la acción de microorganismos.
+              </p>
+            </div>
+          </header>
+
+          <div class="split split-center">
+            <div class="reveal">
+              <h4 class="small-title">De qué estamos hechos</h4>
+              <p>
+                Gran parte de nuestro cuerpo es agua. El resto son moléculas complejas que cumplen
+                funciones muy distintas: las proteínas forman tejidos, las grasas almacenan energía
+                y los minerales participan en procesos vitales.
+              </p>
+
+              <div class="composition" aria-label="Sustancias que forman a los seres vivos">
+                <span>Agua</span>
+                <span>Proteínas</span>
+                <span>Grasas</span>
+                <span>Minerales</span>
+              </div>
+
+              <p>
+                Poco después de la muerte, las enzimas del propio organismo comienzan a romper las
+                células. Este proceso se llama <strong>autólisis</strong>. Después, bacterias y
+                hongos aceleran la descomposición de la materia orgánica y liberan compuestos más
+                simples.
+              </p>
+            </div>
+
+            <figure class="photo-frame photo-frame-crop reveal">
+              <img src="img/cells.jpg" alt="Células humanas observadas con un microscopio de fluorescencia"
+                   width="1000" height="873" loading="lazy">
+              <figcaption>
+                Células observadas con un microscopio de fluorescencia. La vida se organiza en una
+                escala que el ojo no puede ver.
+              </figcaption>
+            </figure>
+          </div>
+
+          <div class="process-grid">
+            <article class="process-card reveal">
+              <span class="step" aria-hidden="true">01</span>
+              <h4>Autólisis</h4>
+              <p>Las enzimas del propio cuerpo empiezan a romper las células desde su interior.</p>
+            </article>
+            <article class="process-card reveal reveal-delay-1">
+              <span class="step" aria-hidden="true">02</span>
+              <h4>Microorganismos</h4>
+              <p>Bacterias y hongos descomponen la materia orgánica y aprovechan sus nutrientes.</p>
+            </article>
+            <article class="process-card reveal reveal-delay-2">
+              <span class="step" aria-hidden="true">03</span>
+              <h4>Transformación</h4>
+              <p>Aparecen gases, líquidos y compuestos simples que poco a poco vuelven al suelo.</p>
+            </article>
+          </div>
+
+          <div class="gallery">
+            <figure class="gallery-item reveal">
+              <div class="gallery-img">
+                <img src="img/microscope.jpg" alt="Microscopio óptico iluminado sobre un fondo negro"
+                     width="1000" height="1000" loading="lazy">
+              </div>
+              <figcaption>El microscopio permite observar lo que el ojo no ve.</figcaption>
+            </figure>
+            <figure class="gallery-item reveal reveal-delay-1">
+              <div class="gallery-img">
+                <img src="img/bacteria.jpg" alt="Bacterias observadas con un microscopio electrónico de barrido"
+                     width="900" height="704" loading="lazy">
+              </div>
+              <figcaption>Bacterias vistas al microscopio electrónico.</figcaption>
+            </figure>
+            <figure class="gallery-item reveal reveal-delay-2">
+              <div class="gallery-img">
+                <img src="img/molecule.jpg" alt="Modelo tridimensional de una molécula de agua"
+                     width="900" height="600" loading="lazy">
+              </div>
+              <figcaption>Modelo de una molécula de agua (H₂O).</figcaption>
+            </figure>
+            <figure class="gallery-item reveal reveal-delay-3">
+              <div class="gallery-img">
+                <img src="img/fungi.jpg" alt="Hongos creciendo sobre materia orgánica en descomposición"
+                     width="1000" height="725" loading="lazy">
+              </div>
+              <figcaption>Hongos que descomponen materia orgánica.</figcaption>
+            </figure>
+          </div>
+
+          <div class="ecosystem reveal">
+            <img src="img/ecosystem.jpg" alt="Bosque con musgo y luz del sol entrando entre los árboles"
+                 width="1280" height="853" loading="lazy">
+            <div class="ecosystem-content">
+              <p class="kicker">El ciclo de la materia</p>
+              <h4>Nada se pierde: <em>todo se transforma.</em></h4>
+              <p>
+                Los nutrientes liberados durante la descomposición vuelven al suelo y pueden ser
+                absorbidos por las plantas. Así, la materia de un ser vivo continúa formando parte
+                de la naturaleza.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ---------- D. CONCLUSIONES ---------- -->
+        <section class="subsection" id="conclusiones" aria-labelledby="tituloConclusiones">
+          <header class="subhead reveal">
+            <span class="letter-badge" aria-hidden="true">D</span>
+            <div>
+              <p class="sub-kicker">Lo que aprendimos</p>
+              <h3 id="tituloConclusiones">Conclusiones</h3>
+              <p>
+                Después de recorrer los mitos y la ciencia, estas son las ideas que quedaron de la
+                investigación.
+              </p>
+            </div>
+          </header>
+
+          <div class="conclusions-layout">
+            <div class="conclusion-aside">
+              <aside class="conclusion-quote reveal">
+                <span class="quote-mark" aria-hidden="true">“</span>
+                <p>La muerte es natural; el misterio está en cómo la explicamos.</p>
+                <span class="quote-credit">Idea final del proyecto</span>
+              </aside>
+
+              <div class="conclusion-extra reveal">
+                <p class="extra-label">Dos caminos, una pregunta</p>
+                <div class="extra-pair">
+                  <span>Mito</span>
+                  <span class="extra-line" aria-hidden="true"></span>
+                  <span>Ciencia</span>
+                </div>
+                <p class="extra-text">
+                  La imaginación y el método científico intentan responder qué hay después de la
+                  muerte.
+                </p>
+              </div>
+            </div>
+
+            <ol class="conclusion-list">
+              <li class="conclusion-item reveal">
+                <span class="num" aria-hidden="true">01</span>
+                <p class="main-conclusion">
+                  Después de investigar la muerte desde la mitología y la ciencia, podemos concluir
+                  que es un fenómeno natural que forma parte del ciclo de vida de los seres vivos.
+                </p>
+              </li>
+              <li class="conclusion-item reveal">
+                <span class="num" aria-hidden="true">02</span>
+                <p>
+                  La mitología nos muestra cómo las antiguas civilizaciones intentaban explicar la
+                  muerte mediante historias de dioses y personajes fantásticos.
+                </p>
+              </li>
+              <li class="conclusion-item reveal">
+                <span class="num" aria-hidden="true">03</span>
+                <p>
+                  Por otro lado, la ciencia nos permite comprender que la muerte tiene explicaciones
+                  biológicas, físicas y químicas.
+                </p>
+              </li>
+              <li class="conclusion-item reveal">
+                <span class="num" aria-hidden="true">04</span>
+                <p>
+                  También aprendimos que factores como la temperatura y la humedad pueden influir en
+                  los procesos de descomposición.
+                </p>
+              </li>
+              <li class="conclusion-item reveal">
+                <span class="num" aria-hidden="true">05</span>
+                <p>
+                  Una de las cosas más interesantes es que, aunque la muerte representa el final de
+                  las funciones vitales de un organismo, la materia que lo componía continúa
+                  formando parte de la naturaleza.
+                </p>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+    <!-- ================= SECCIÓN 3: RESUMEN ================= -->
+    <section class="section section-resumen" id="resumen" aria-labelledby="tituloResumen">
+      <div class="container">
+        <header class="section-head section-head-center reveal">
+          <span class="section-number" aria-hidden="true">03</span>
+          <div class="section-head-text">
+            <p class="kicker">Síntesis de la investigación</p>
+            <h2 id="tituloResumen">Resumen de la <em>investigación</em></h2>
+            <p class="section-lead">El proyecto completo, explicado en cuatro párrafos.</p>
+          </div>
+        </header>
+
+        <div class="resumen-card reveal">
+          <span class="language-badge">ES · Español</span>
+          <p class="resumen-lead">
+            Esta investigación estudia la muerte como un fenómeno natural desde dos perspectivas:
+            la mitología y la ciencia.
+          </p>
+          <p>
+            Desde la mitología, se analizan las creencias de la antigua Grecia y personajes como
+            Hades, Tánatos y Perséfone, quienes representaban diferentes aspectos relacionados con
+            la muerte.
+          </p>
+          <p>
+            Desde la ciencia, se explica cómo la física permite comprender los cambios de
+            temperatura y energía que experimenta un organismo después de morir, mientras que la
+            química estudia las transformaciones de la materia orgánica y los procesos de
+            descomposición.
+          </p>
+          <p>
+            El objetivo principal es comprender qué sucede con los seres vivos después de la muerte
+            y cómo las condiciones ambientales influyen en estos procesos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECCIÓN 4: ABSTRACT (INGLÉS) ================= -->
+    <section class="section section-abstract" id="abstract" aria-labelledby="tituloAbstract">
+      <div class="container">
+        <header class="section-head section-head-center reveal">
+          <span class="section-number" aria-hidden="true">04</span>
+          <div class="section-head-text">
+            <p class="kicker">Final section · English</p>
+            <h2 id="tituloAbstract">ABSTRACT</h2>
+            <p class="section-lead">A short summary of the research for English readers.</p>
+          </div>
+        </header>
+
+        <div class="abstract-card reveal">
+          <div class="abstract-head">
+            <span class="abstract-tag">EN · English</span>
+          </div>
+
+          <p>
+            This research is about death as a natural biological phenomenon. It explains death from
+            two perspectives: mythology and science.
+          </p>
+          <p>
+            From the scientific perspective, death occurs when the vital functions of an organism
+            permanently stop. Physics helps us understand changes in energy and temperature, while
+            chemistry explains the processes that occur in cells and the decomposition of organic
+            matter.
+          </p>
+          <p>
+            The main objective is to understand what happens to living organisms after death and how
+            environmental conditions influence natural decomposition.
+          </p>
+
+          <div class="keywords">
+            <span class="keywords-label">Keywords</span>
+            <div class="keyword-list">
+              <span>Death</span>
+              <span>Biology</span>
+              <span>Physics</span>
+              <span>Chemistry</span>
+              <span>Mythology</span>
+              <span>Life cycle</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= PIE DE PÁGINA ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main">
+        <span class="footer-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round">
+            <path d="M7 3h10M7 21h10M9 3c0 4 3 5 3 7s-3 3-3 7M15 3c0 4-3 5-3 7s3 3 3 7"/>
+          </svg>
+        </span>
+
+        <p class="footer-title">La muerte: entre la mitología y la ciencia</p>
+
+        <p class="footer-line">Proyecto escolar - Grado décimo de bachillerato</p>
+        <p class="footer-line">Investigación: La muerte entre la mitología y la ciencia</p>
+        <p class="footer-line footer-line-quote">
+          Un recorrido por los misterios de la vida desde la historia y el conocimiento científico.
+        </p>
+
+        <div class="footer-divider" aria-hidden="true"></div>
+
+        <details class="credits">
+          <summary>Créditos de las imágenes</summary>
+          <p class="credits-intro">
+            Imágenes de Wikimedia Commons utilizadas con licencias libres (CC BY, CC BY-SA, CC0 o
+            dominio público). Los enlaces abren la ficha original de cada archivo.
+          </p>
+          <ul class="credits-list">
+            <li><a href="https://commons.wikimedia.org/wiki/File:Hourglass_with_sand.jpg" target="_blank" rel="noopener noreferrer">Reloj de arena</a> — John Morgan · CC BY 2.0</li>
+            <li><a href="https://commons.wikimedia.org/wiki/File:Sol_Duc_forest_sunlight_moss_c_bubar_march_05_2015_(17324793921).jpg" target="_blank" rel="noopener noreferrer">Bosque de Sol Duc</a> — Olympic National Park · Dominio público</li>
+            <li><a href="https://commons.wikimedia.org/wiki/File:Persephone_Hades_BM_Vase_E82.jpg" target="_blank" rel="noopener noreferrer">Hades y Perséfone (cerámica griega)</a> — Peintre Codrus · CC BY 2.5</li>
+            <li><a href="https://commons.wikimedia.org/wiki/File:Euphronios_-_ARV_14_extra_-_Hypnos_and_Thanatos_carrying_the_body_of_Sarpedon_-_warriors_arming_-_Cerveteri_MAN_-_12.jpg" target="_blank" rel="noopener noreferrer">Hipnos y Tánatos con Sarpedón</a> — ArchaiOptix · CC BY-SA 4.0</li>
+            <li><a href="https://commons.wikimedia.org/wiki/File:The_Return_of_Persephone_-_MET_DP-21913-001.jpg" target="_blank" rel="noopener noreferrer">El regreso de Perséfone</a> — Frederic Leighton · CC0</li>
+            <li><a href="https://commons.wikimedia.org/wiki/File:Fluorescence_microscopy_of_the_oral_cancer_cells.jpg" target="_blank" rel="noopener noreferrer">Células en fluorescencia</a> — Korinna · CC BY 4.0</li>
+            <li><a href="https://commons.wikimedia.org/wiki/File:Dark_Cool_Optical_Microscope.png" target="_blank" rel="noopener noreferrer">Microscopio óptico</a> — Rouibi Dhia Eddine Nadjm · CC BY-SA 4.0</li>
+            <li><a href="https://commons.wikimedia.org/wiki/File:CelsiusKelvinThermometer.jpg" target="_blank" rel="noopener noreferrer">Termómetro Celsius-Kelvin</a> — Martinvl · CC BY-SA 3.0</li>
+            <li><a href="https://commons.wikimedia.org/wiki/File:Hoar_frost_ice_crystals_in_Tuntorp_10.jpg" target="_blank" rel="noopener noreferrer">Cristales de escarcha</a> — W.carter · CC BY-SA 4.0</li>
+            <li><a href="https://commons.wikimedia.org/wiki/File:Campfire_flames_at_night.jpg" target="_blank" rel="noopener noreferrer">Fogata nocturna</a> — Marc-Lautenbacher · CC BY-SA 4.0</li>
+            <li><a href="https://commons.wikimedia.org/wiki/File:Molecule_of_water.jpg" target="_blank" rel="noopener noreferrer">Molécula de agua</a> — Ljeto · CC BY-SA 4.0</li>
+            <li><a href="https://commons.wikimedia.org/wiki/File:Cholera_bacteria_SEM.jpg" target="_blank" rel="noopener noreferrer">Bacterias al microscopio electrónico</a> — Copyrighted free use</li>
+            <li><a href="https://commons.wikimedia.org/wiki/File:Saprotrophic_fungi_as_decomposers.jpg" target="_blank" rel="noopener noreferrer">Hongos descomponedores</a> — Albarubescens · CC BY-SA 4.0</li>
+            <li><a href="https://commons.wikimedia.org/wiki/File:Hoh_moss_arch_sunlight_cbubar_(16680290604).jpg" target="_blank" rel="noopener noreferrer">Bosque de Hoh</a> — Olympic National Park · Dominio público</li>
+          </ul>
+        </details>
+
+        <p class="footer-bottom">
+          Sitio elaborado con HTML, CSS y JavaScript · Proyecto académico sin fines comerciales.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón para regresar al inicio -->
+  <button class="back-to-top" id="botonArriba" type="button" aria-label="Volver al inicio de la página">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+      <path d="M12 20V4M6 10l6-6 6 6"/>
+    </svg>
+  </button>
+</body>
+</html>
